@@ -6,5 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Include the URLs from person app.
-    path('', include('person.urls')),
+    path('', include('certificate.urls')),
 ]

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Person
-from .forms import PersonForm
+#from .models import Person
+#from .forms import PersonForm
 
 def home(request):
     """
@@ -12,12 +12,11 @@ def home(request):
     Returns:
         HttpResponse: Rendered template with all Person objects
     """
-    people = Person.objects.all()
+    # people = Certificate.objects.all()
     context = {
-        'people': people,
-        'message': '¡Hello Django 5 Person CRUD!',
+        'message': '¡Hello Django 5 Repositorio de Certificados!',
     }
-    return render(request, 'person/home.html', context)
+    return render(request, 'certificate/home.html', context)
 
 def create_person(request):
     """
