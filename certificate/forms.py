@@ -1,31 +1,75 @@
 from django import forms
-from .models import Person
+from certificate.models import Certificado, Data
 
-class PersonForm(forms.ModelForm):
+
+class DataForm(forms.ModelForm):
     """
-    A ModelForm for creating and updating Person instances.
-    
-    This form handles the validation and presentation of Person data,
-    providing a secure interface for person-related operations in views.
-    Automatically generated from the Person model with configurable fields.
+    Formulario de la data que se sube al servidor.
     """
 
     class Meta:
-        """
-        Metadata class defining the form's relationship to the model.
-        
-        Attributes:
-            model (Model): The Django model class this form is based on
-            fields (list): The model fields to include in the form
-            labels (dict): Custom display labels for form fields
-            help_texts (dict): Descriptive help text for each field
-            error_messages (dict): Custom error messages
-            widgets (dict): Custom widgets for field rendering
-        """
-        model = Person
+        model = Data
+        fields = ('descripcion', 'data_zip')
+        # Opcional: agregar widgets personalizados para mejor UX
+        widgets = {
+            'descripcion': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Ingrese una descripción'
+            }),
+            'data_zip': forms.FileInput(attrs={
+                'class': 'form-control'
+            })
+        }
+        # Opcional: agregar labels personalizados
+        labels = {
+            'descripcion': 'Descripción del archivo',
+            'data_zip': 'Archivo ZIP'
+        }
 
-        fields = [
-            'name',
-            'email',
-            'age'
-        ]
+
+class CertificadoForm(forms.ModelForm):
+    """
+    Formulario del certificado digital que se sube al servidor.
+    """
+
+    class Meta:
+        model = Certificado
+        fields = ('nombre_completo', 'cedula', 'evento_curso', 'rol', 'certificado')
+        # Excluir uploaded_at ya que se llena automáticamente con auto_now_add=True
+
+        widgets = {
+            'nombre_completo': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Nombre completo del participante'
+            }),
+            'cedula': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Número de cédula'
+            }),
+            'evento_curso': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Nombre del evento o curso'
+            }),
+            'rol': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Rol del participante'
+            }),
+            'certificado': forms.FileInput(attrs={
+                'class': 'form-control',
+                'accept': '.pdf,.jpg,.png'  # Especificar tipos de archivo aceptados
+            })
+        }
+
+        labels = {
+            'nombre_completo': 'Nombre Completo',
+            'cedula': 'Cédula de Identidad',
+            'evento_curso': 'Evento o Curso',
+            'rol': 'Rol',
+            'certificado': 'Certificado Digital'
+        }
+
+        # Opcional: agregar help texts
+        help_texts = {
+            'cedula': 'Ingrese el número de cédula sin puntos ni espacios',
+            'certificado': 'Suba el archivo del certificado en formato PDF o imagen'
+        }

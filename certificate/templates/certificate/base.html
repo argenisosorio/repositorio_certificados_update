@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Curso - Aprendizaje en Robótica">
+    <meta name="description" content="Repositorio de Certificados PDF de CENDITEL">
     <meta name="author" content="Ing. Argenis Osorio">
     <title>
         {% block title %}Repositorio de Certificados PDF de CENDITEL{% endblock %}
@@ -15,8 +15,93 @@
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 </head>
 <body>
+    <!-- Navbar -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="#"
+                            >
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuLink"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Dropdown link
+                            </a>
+                            <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink"
+                            >
+                                <li>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Final de Navbar -->
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags %}{% endif %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+
     <div class="container mt-4">
         {% block content %}{% endblock %}
+    </div>
+
+    <div class="container mt-4 text-center">
+        <a
+            href="http://www.cenditel.gob.ve"
+            target="_blank"
+            style="
+                text-decoration: none;
+                color: inherit;
+            "
+        >
+            Diseñado por Ing. Argenis Osorio, Desarrollado en CENDITEL.
+        </a>
     </div>
 
     <!-- Load Bootstrap JS -->
