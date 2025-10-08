@@ -38,6 +38,8 @@ class Certificado(models.Model):
         return force_str(self.cedula) if self.cedula else force_str(self.nombre_completo)
 
     class Meta:
+        # Nombre de la tabla en la base de datos.
+        db_table = 'registro_certificado'
         verbose_name = "Certificado"
         verbose_name_plural = "Certificados"
         # Opcional: agregar índices para mejorar performance
