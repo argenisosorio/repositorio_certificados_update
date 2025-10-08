@@ -1,0 +1,2 @@
+1- Pulir el formulario de búsqueda en la página inicial.
+2- Actualizar el readme.
