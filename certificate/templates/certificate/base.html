@@ -13,96 +13,27 @@
     <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
     <!-- Load Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Own styles -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a
-                                class="nav-link active"
-                                aria-current="page"
-                                href="#"
-                            >
-                                Inicio
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                id="navbarDropdownMenuLink"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Dropdown link
-                            </a>
-                            <ul
-                                class="dropdown-menu"
-                                aria-labelledby="navbarDropdownMenuLink"
-                            >
-                                <li>
-                                    <a class="dropdown-item" href="#">Action</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+    {% include "certificate/partials/navbar.html" %}
     <!-- Final de Navbar -->
 
-    {% if messages %}
-        {% for message in messages %}
-            {% if message.tags %}{% endif %}
-            {{ message }}
-        {% endfor %}
-    {% endif %}
+    <!-- Messages -->
+    {% include "certificate/partials/messages.html" %}
+    <!-- Final de messages -->
 
+    <!-- Content -->
     <div class="container mt-4">
         {% block content %}{% endblock %}
     </div>
+    <!-- Final de Content -->
 
-    <div class="container mt-4 text-center">
-        <a
-            href="http://www.cenditel.gob.ve"
-            target="_blank"
-            style="
-                text-decoration: none;
-                color: inherit;
-            "
-        >
-            Diseñado por Ing. Argenis Osorio, Desarrollado en CENDITEL.
-        </a>
-    </div>
+    <!-- Footer -->
+    {% include "certificate/partials/footer.html" %}
+    <!-- Final de Footer -->
 
     <!-- Load Bootstrap JS -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>

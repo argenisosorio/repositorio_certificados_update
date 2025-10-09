@@ -1,0 +1,22 @@
+.h1-main {
+    font-size: 55px;
+}
+
+/* Ancho del campo de cédula */
+.form-cedula {
+    width: 200px;
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #e7e7e7;
+}
+
+.certificates-found {
+    color: green;
+}
+
+.no-results {
+    color: red;
+}
