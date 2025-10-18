@@ -67,3 +67,8 @@
     border: ridge 1px rgb(177, 177, 177);
     border-radius: 100px;
 }
+
+/* Color de fondo de la navbar */
+.bg-light {
+    background-color: rgb(255, 255, 255) !important;
+}
