@@ -1,5 +1,6 @@
 .h1-main {
     font-size: 55px;
+    color: #1d3d6c
 }
 
 /* Ancho del campo de cédula */
@@ -19,4 +20,43 @@
 
 .no-results {
     color: red;
+}
+
+.table {
+    font-size: 13px;
+}
+
+/* Color de cabecera de tabla */
+.table-dark {
+    /*--bs-table-color: #000000 !important;*/
+    --bs-table-bg: #1d3d6c !important;
+    --bs-table-border-color: #FFFFFF !important;
+}
+
+/* Color de botón primario */
+.btn-primary {
+    background-color: #1d3d6c !important;
+    border-color: #1d3d6c !important;
+}
+
+/* Ancho de los botones del formulario de búsqueda principal */
+.btn-form1 {
+    width: 100px;
+}
+
+.btn-clear {
+    background-color: #d0d0d0; /* Lightgray */
+    color: #000000;
+    border-color: #1d3d6c; /* Gray*/
+}
+
+/* Color del borde de los campos del formulario */
+.form-control {
+    border-color: #1d3d6c !important;
+}
+
+/* Estilo de la imagen en el pie de página */
+.img-footer {
+    border: ridge 1px rgb(177, 177, 177);
+    border-radius: 100px;
 }

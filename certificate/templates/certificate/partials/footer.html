@@ -1,5 +1,6 @@
+{% load static %}
 <div class="text-center footer">
-    <div class="mt-4">
+    <div class="mt-2">
         <a
             
             href="http://www.cenditel.gob.ve"
@@ -9,7 +10,16 @@
                 color: inherit;
             "
         >
-            Diseñado por Ing. Argenis Osorio, Desarrollado en CENDITEL.
+            <img
+                src="{% static 'images/logo-cenditel.png' %}"
+                alt="imagen_cintillo"
+                class="img-fluid mb-3 img-footer"
+                width="100px"
+            >
+            <br />
+            Diseñado por Ing. Argenis Osorio
+            <br />
+            Desarrollado en CENDITEL
         </a>
     </div>
 </div>
