@@ -1,5 +1,4 @@
-1- Pulir el formulario de búsqueda en la página inicial.
-2- Actualizar el readme.
-3- Incluir font-awesome.
-4- Agregar changelog.
-5- Agregar url de version.
+-Agregar formulario para subir certificados.
+-Actualizar el readme.
+-Agregar changelog.
+-Agregar url de version.

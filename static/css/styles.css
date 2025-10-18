@@ -23,7 +23,7 @@
 }
 
 .table {
-    font-size: 13px;
+    font-size: 14px;
 }
 
 /* Color de cabecera de tabla */
@@ -39,9 +39,16 @@
     border-color: #1d3d6c !important;
 }
 
+/* Color de botón primario */
+.btn-primary:hover {
+    background-color: #FFFFFF !important;
+    color: #1d3d6c !important;
+    border-color: #1d3d6c !important;
+}
+
 /* Ancho de los botones del formulario de búsqueda principal */
 .btn-form1 {
-    width: 100px;
+    width: 150px;
 }
 
 .btn-clear {
