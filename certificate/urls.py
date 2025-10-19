@@ -13,10 +13,10 @@ urlpatterns = [
         login_required(views.ListaCertificados.as_view()),
         name='lista_certificados'),
 
-    # Subida de archivos
-    path('subir_data',
-        login_required(views.SubirData.as_view()),
-        name='subir_data'),
+    # Subida de archivos .zip
+    path('subir_data_zip',
+        login_required(views.SubirDataZip.as_view()),
+        name='subir_data_zip'),
 
     path('subir_data_csv',
         login_required(views.SubirDataCsv.as_view()),

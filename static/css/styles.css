@@ -3,6 +3,10 @@
     color: #1d3d6c
 }
 
+h2 {
+    color: #1d3d6c
+}
+
 /* Ancho del campo de cédula */
 .form-cedula {
     width: 200px;

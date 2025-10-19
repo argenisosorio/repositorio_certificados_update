@@ -16,19 +16,19 @@ import csv
 from django.db.models import Max
 
 
-class SubirData(SuccessMessageMixin, CreateView):
+class SubirDataZip(SuccessMessageMixin, CreateView):
     """
     Clase que permite subir la data .zip en el servidor.
     """
     model = Data
     form_class = DataForm
-    template_name = "certificate/subir_data.html"
-    success_url = reverse_lazy('certificate:subir_data')
-    success_message = "La data se guardó con éxito"
+    template_name = "certificate/subir_data_zip.html"
+    success_url = reverse_lazy('certificate:subir_data_zip')
+    success_message = "La data .zip se guardó con éxito"
 
     def post(self, request, *args, **kwargs):
         self.object = None
-        # Código comentado eliminado para limpieza
+
         return super().post(request, *args, **kwargs)
 
 
