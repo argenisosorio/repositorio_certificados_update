@@ -1,0 +1,75 @@
+{% if request.user.is_authenticated %}
+<!-- Modal -->
+<div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <i class="fas fa-question"></i>
+                    Ayuda
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <b>Pasos a seguir para subir Certificados al Repositorio</b>
+                <br />
+                <br />
+                <p>
+                    1) Subir un archivo .zip que contenga los certificados desde el formulario
+                    disponible desde /subir_data, el .zip debe contener una carpeta con el nombre
+                    del evento y dentro deben estar los certificados PDF.
+                </p>
+
+                <p>
+                    2) Descomprimir y borrar el fichero .zip con la opción "Descomprimir .zip y
+                    borrar .zip"
+                </p>
+
+                <p>
+                    3) Subir el archivo data_final.csv desde el formulario disponible desde
+                    /subir_data_csv
+                    <br />
+                    <br />
+                    Debe tener un formato como este y el formato de fecha debe ser yyyy-mm-dd 00:00:00:
+                    <br />
+                    María Mora,17770364,Foro de Blockchain,Asistente,fb/17770364-fb-Asistente-signed.pdf,2016-10-12 00:00:00
+                    <br>
+                    José Ruiz,15755814,Foro de Blockchain,Asistente,fb/15755814-fb-Asistente-signed.pdf,2016-10-12 00:00:00
+                    <br>
+                    Luis Aguin,13959850,Foro de Blockchain,Asistente,fb/13959850-fb-Asistente-signed.pdf,2016-10-12 00:00:00
+                </p>
+
+                <p>
+                    4) Insertar la data en la base de datos con la opción "Insertar data .csv"
+                </p>
+
+                <p>
+                    <b>Nota:</b> En caso de subir un .csv con datos erróneos se puede purgar la carpeta
+                    /media pulsando la opción "Eliminar archivos .csv" del menú.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Final de Modal -->
+{% endif %}

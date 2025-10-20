@@ -1,4 +1,6 @@
--Agregar modal de ayuda global.
+-Pagina error 404 y 500.
+-Redirigir al login si intenta acceder a alguna página que requiera login.
 -Actualizar el readme.
 -Agregar changelog.
 -Agregar url de version.
+-Corregir modal de ayuda global con todas lkos detalles correctos.
