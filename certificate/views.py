@@ -18,13 +18,14 @@ from django.db.models import Max
 
 class SubirDataZip(SuccessMessageMixin, CreateView):
     """
-    Clase que permite subir la data .zip en el servidor.
+    Clase que permite subir un archivo .zip en el servidor y almacenarlo en el
+    directorio MEDIA_ROOT definido en settings.py.
     """
     model = Data
     form_class = DataForm
     template_name = "certificate/subir_data_zip.html"
-    success_url = reverse_lazy('certificate:subir_data_zip')
-    success_message = "La data .zip se guardó con éxito"
+    success_url = reverse_lazy('subir_data_zip')
+    success_message = "El archivo .zip se almaceno con éxito"
 
     def post(self, request, *args, **kwargs):
         self.object = None

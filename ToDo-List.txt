@@ -1,4 +1,4 @@
--Agregar formulario para subir certificados.
+-Agregar modal de ayuda global.
 -Actualizar el readme.
 -Agregar changelog.
 -Agregar url de version.

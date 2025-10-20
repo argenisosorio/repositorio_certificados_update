@@ -6,18 +6,20 @@ from django.utils.encoding import force_str
 
 class Data(models.Model):
     """
-    Modelo de la data que se sube al servidor.
+    Modelo de los archivos .zip que se suben al servidor.
+
+    El archivo .zip se guardará en el directorio MEDIA_ROOT definido en
+    settings.py.
     """
+    data_zip = models.FileField(upload_to='', blank=True, null=True)
     descripcion = models.CharField(max_length=255, blank=True, null=True)
-    data_zip = models.FileField(upload_to='uploads/data_zips/', blank=True, null=True)
 
     def __str__(self):
         return force_str(self.descripcion)
 
     class Meta:
-        # Opcional: agregar nombres más descriptivos para el admin
-        verbose_name = "Datos"
-        verbose_name_plural = "Datos"
+        verbose_name = "Archivo .zip"
+        verbose_name_plural = "Archivo .zip"
 
 
 class Certificado(models.Model):

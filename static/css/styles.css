@@ -12,6 +12,11 @@ h2 {
     width: 200px;
 }
 
+/* Ancho de los demás campos */
+.all-inputs {
+    width: 500px;
+}
+
 .footer {
     margin-top: 40px;
     padding: 20px 0;
